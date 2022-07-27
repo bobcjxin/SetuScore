@@ -9,6 +9,8 @@ from hoshino import R, Service
 from hoshino.typing import CQEvent, MessageSegment
 from hoshino.util import FreqLimiter, DailyNumberLimiter
 
+from .config import API_KEY, SECRET_KEY
+
 
 sv = Service('色图打分')
 _max = 10       #一天最多打分几次
@@ -22,8 +24,8 @@ reply = False  #是否通过回复打分,是为True,否为False
                #如果你是很早以前部署的bot那么很大概率你的aiocqhttp小于1.4.0
                #可以使用指令 pip install --upgrade aiocqhttp 更新版本
 
-API_KEY = ''   #你的API Key
-SECRET_KEY = ''#你的Secret Key
+# API_KEY = ''   #你的API Key
+# SECRET_KEY = ''#你的Secret Key
 
 # ======================================== #
 host = f'https://aip.baidubce.com/oauth/2.0/token?grant_type=client_credentials&client_id={API_KEY}&client_secret={SECRET_KEY}'
