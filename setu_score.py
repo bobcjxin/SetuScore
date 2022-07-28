@@ -45,11 +45,11 @@ async def porn_pic_index(url):
         if (data):
             r = data
             if "error_code" in r:
-                return { 'code': r['error_code'], 'msg': r['error_msg'] }
+                return {'code': r['error_code'], 'msg': r['error_msg'] }
             try:
                 data = r['data']
             except:
-                return { 'code': -1, 'msg': '请检查策略组中疑似区间是否拉满' }
+                return {'code': -1, 'msg': '请检查策略组中疑似区间是否拉满' }
             porn_0 = 0
             porn_1 = 0
             porn_2 = 0
@@ -139,12 +139,13 @@ async def setu_score(bot,ev: CQEvent):
     else:
         code = porn['code']
         err = porn['msg']
-        await bot.send(ev,f'错误:{code}\n{err}')
+        # await bot.send(ev,f'错误:{code}\n{err}')
+        await bot.send(ev, str(MessageSegment.image(url)+'啧啧，应该说你是xp独特吗？完全不色嘛～～')
         return
     if reply is False:
-        await bot.send(ev,str(MessageSegment.image(url)+f'\n色图评分:{score}'))
+        await bot.send(ev, str(MessageSegment.image(url)+f'\n色图评分:{score}'))
     else:
-        await bot.send(ev,MessageSegment.reply(msg_id) + f'色图评分:{score}')
+        await bot.send(ev, MessageSegment.reply(msg_id) + f'色图评分:{score}')
     _flmt.start_cd(uid)
     _nlmt.increase(uid)
 
