@@ -140,7 +140,7 @@ async def setu_score(bot,ev: CQEvent):
         code = porn['code']
         err = porn['msg']
         # await bot.send(ev,f'错误:{code}\n{err}')
-        await bot.send(ev, str(MessageSegment.image(url)+'啧啧，应该说你是xp独特吗？完全不色嘛～～')
+        await bot.send(ev, str(MessageSegment.image(url)+'啧啧，应该说你是xp独特吗？完全不色嘛～～'))
         return
     if reply is False:
         await bot.send(ev, str(MessageSegment.image(url)+f'\n色图评分:{score}'))
